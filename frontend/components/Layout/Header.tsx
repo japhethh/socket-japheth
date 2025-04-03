@@ -114,17 +114,17 @@ export default function Header() {
 }
 
 // Optional: Global click outside handler for dropdown
-function useOutsideClick(ref, callback) {
-  React.useEffect(() => {
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        callback();
-      }
-    }
+// function useOutsideClick(ref, callback) {
+//   React.useEffect(() => {
+//     function handleClickOutside(event) {
+//       if (ref.current && !ref.current.contains(event.target)) {
+//         callback();
+//       }
+//     }
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref, callback]);
-}
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => {
+//       document.removeEventListener("mousedown", handleClickOutside);
+//     };
+//   }, [ref, callback]);
+// }

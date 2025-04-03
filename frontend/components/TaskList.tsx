@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import { connectSocket } from '@/lib/socket';
 import type { Task } from '@/types/task';
 import toast from 'react-hot-toast';
+import { Socket } from 'socket.io-client';
 
 export default function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
-  const [socket, setSocket] = useState<any>(null);
+  // const [socket, setSocket] = useState<any>(null);
+  const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
     const socketInstance = connectSocket();

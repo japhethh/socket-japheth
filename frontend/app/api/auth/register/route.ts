@@ -3,16 +3,16 @@ import jwt from 'jsonwebtoken'
 import { hashPassword } from '@/utils/bcrypt'
 import prisma from '@/lib/prisma'
 
-const generateToken = (userId: string) => {
-  const secret = process.env.JWT_SECRET
-  const expiresIn = "1h"
+// const generateToken = (userId: string) => {
+//   const secret = process.env.JWT_SECRET
+//   const expiresIn = "1h"
 
-  if (!secret) {
-    throw new Error('JWT_SECRET is not defined')
-  }
+//   if (!secret) {
+//     throw new Error('JWT_SECRET is not defined')
+//   }
 
-  return jwt.sign({ userId }, secret, { expiresIn })
-}
+//   return jwt.sign({ userId }, secret, { expiresIn })
+// }
 
 export const POST = async (req: Request) => {
   try {

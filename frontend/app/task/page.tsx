@@ -54,17 +54,17 @@ export default function TaskList() {
   }
 
 
-  const deleteTask = async (id: number) => {
-    try {
-      const res = await fetch(`/api/task/${id} `, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' }
-      })
-    } catch (error) {
-      console.error('Error deleting task:', error)
+  // const deleteTask = async (id: number) => {
+  //   try {
+  //     const res = await fetch(`/api/task/${id} `, {
+  //       method: 'DELETE',
+  //       headers: { 'Content-Type': 'application/json' }
+  //     })
+  //   } catch (error) {
+  //     console.error('Error deleting task:', error)
 
-    }
-  }
+  //   }
+  // }
 
   if (loading) return <div>Loading tasks...</div>
 
