@@ -44,19 +44,9 @@ export default function Header() {
         {/* Left side - Logo and Navigation Links */}
         <div className="flex items-center space-x-6">
           <Link href="/" className="text-2xl font-bold text-gray-800">
-            Logo
+            TODOLIST
           </Link>
-          <div className="space-x-4">
-            <Link href="/dashboard" className="text-gray-600 hover:text-gray-800">
-              Dashboard
-            </Link>
-            <Link href="/projects" className="text-gray-600 hover:text-gray-800">
-              Projects
-            </Link>
-            <Link href="/reports" className="text-gray-600 hover:text-gray-800">
-              Reports
-            </Link>
-          </div>
+
         </div>
 
 

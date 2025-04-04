@@ -56,7 +56,7 @@ export default function TaskList() {
 
   return (
     <div className="max-w-md mx-auto p-4">
-      <div className="flex mb-4">
+      <div className="flex mb-4 gap-2">
         <input
           value={newTaskTitle}
           onChange={(e) => setNewTaskTitle(e.target.value)}
