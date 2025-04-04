@@ -35,7 +35,7 @@ export default function Header() {
     // This might involve clearing tokens, session storage, etc.
 
     console.log('Logging out');
-    // Example: router.push('/login') or calling an auth service
+    // Example: router.push('/login') or calling an auth services
   };
 
   return (
