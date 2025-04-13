@@ -13,11 +13,6 @@ const generateToken = async (userId: string) => {
     throw new Error('JWT_SECRET is not defined')
   }
 
-  // return await new SignJWT({ userId })
-  //   .setProtectedHeader({ alg: 'HS256' })
-  //   .setExpirationTime('1h')
-  //   .sign(secret)
-
   return await new SignJWT({ userId })
     .setProtectedHeader({ alg: 'HS256' })
     .setExpirationTime('1h')
