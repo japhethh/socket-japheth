@@ -26,6 +26,7 @@ export default function TaskList() {
       setTasks(prev => [newTask, ...prev]);
     });
 
+
     socketInstance.on('taskUpdated', (updatedTask: Task) => {
       toast('Task created successfully!')
       setTasks(prev => prev.map(t => t.id === updatedTask.id ? updatedTask : t));
@@ -43,6 +44,7 @@ export default function TaskList() {
   const handleCreate = () => {
     if (!newTaskTitle.trim() || !socket) return;
     socket.emit('createTask', newTaskTitle);
+
     setNewTaskTitle('');
   };
 

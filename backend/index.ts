@@ -42,6 +42,9 @@ io.on('connection', (socket) => {
     }
   });
 
+
+
+
   // READ
   socket.on('getTasks', async (callback) => {
     try {
@@ -71,7 +74,27 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('User disconnected');
   });
+
+
+  // This is my first try to make my own socket.io in here
+  // This is fetch the request in the frontend
+  socket.on('createSomething', async (title: string) => {
+    try {
+      const newTask = await prisma.helloLord.create({
+        data: {
+          title: title,
+          completed: false
+        }
+      });
+
+      io.emit('taskCreated', newTask)
+    } catch (error) {
+      console.error('Error creating task:', error)
+    }
+  })
 });
+
+
 
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
